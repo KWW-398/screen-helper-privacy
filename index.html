@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>螢幕小幫手 隱私權政策 | Screen Helper Privacy Policy</title>
+<style>
+:root{color-scheme:light dark;--fg:#1d1d1f;--bg:#fff;--mut:#666;--line:#ddd;--acc:#0b63c5;--code:#f3f3f3}
+@media (prefers-color-scheme:dark){:root{--fg:#eee;--bg:#161618;--mut:#aaa;--line:#333;--acc:#6aa8ff;--code:#26262a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 -apple-system,"Segoe UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:46rem;margin:0 auto;padding:1.25rem 1rem 3rem}
+nav{display:flex;gap:1rem;flex-wrap:wrap;padding:.6rem 0;border-bottom:1px solid var(--line);margin-bottom:1rem;font-size:.95rem}
+a{color:var(--acc);overflow-wrap:anywhere}
+h1{font-size:1.6rem;line-height:1.3;margin:1.2rem 0 .6rem}
+h2{font-size:1.2rem;margin:1.8rem 0 .4rem;padding-top:.4rem;border-top:1px solid var(--line)}
+code{background:var(--code);padding:.05em .3em;border-radius:4px;font-size:.9em;overflow-wrap:anywhere}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:.45rem .55rem;text-align:left;vertical-align:top}
+th{background:var(--code)}
+section+section{margin-top:3rem;border-top:3px solid var(--line)}
+.top{font-size:.9rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#zh-TW">繁體中文</a><a href="#en" hreflang="en">English</a></nav>
+<section id="zh-TW" lang="zh-Hant-TW">
+<h1>螢幕小幫手 隱私權政策</h1>
+<p><strong>應用程式：</strong>螢幕小幫手（Screen Helper）<br />
+<strong>發行者：</strong>FusionCore<br />
+<strong>生效日期：</strong>2026 年 11 月 17 日<br />
+<strong>聯絡信箱：</strong>bump.into.support@gmail.com</p>
+<h2>重點摘要</h2>
+<ul>
+<li>只有在<strong>你按下快捷鍵發問時</strong>，螢幕小幫手才會使用麥克風、擷取螢幕畫面。</li>
+<li>你的錄音、螢幕截圖和最近幾輪對話的文字，會用<strong>你自己的 Gemini API 金鑰</strong>，從你的電腦<strong>直接傳給 Google 的 Gemini API</strong>，不會經過 FusionCore。</li>
+<li><strong>FusionCore 不會收到你的任何資料。</strong>本程式沒有帳號系統，也沒有使用情形分析、廣告、當機回報或自動檢查更新。我們不會販售資料，程式也不會收集你的聯絡人、位置或付款資料。</li>
+<li>設定和記錄檔都存在你的電腦上。錄音和截圖預設<strong>不會</strong>存下來，除非你自己打開這個功能；打開後也可以隨時關掉、刪除這些檔案。</li>
+</ul>
+<h2>什麼時候會用到麥克風和螢幕</h2>
+<p><strong>麥克風：</strong>按下快捷鍵（預設是 Ctrl+Alt+Space）之後才會開啟麥克風。預設的「按住」模式是按住時錄音、放開就停止；「切換」模式是按一下開始、再按一下送出。每次最多錄 60 秒，時間到會自動送出。短於 0.4 秒的錄音會直接丟掉，不會送出。</p>
+<p><strong>螢幕截圖：</strong>送出問題時，會擷取滑鼠游標所在的那個螢幕一張畫面。如果把設定 <code>capture</code> 改成 <code>"all"</code>，就會擷取所有螢幕。截圖送出前會縮小（預設長邊最多 1280 像素）並轉成 JPEG 圖片。小幫手自己的游標和字幕不會出現在截圖裡。</p>
+<p><strong>滑鼠游標位置：</strong>程式會讀取滑鼠游標的位置，用來判斷要擷取哪個螢幕，以及讓小幫手的游標在畫面上跟著滑鼠移動。游標座標不會傳給 Google。</p>
+<p><strong>其他資料：</strong>本程式不會讀取視窗標題、剪貼簿、電腦裡的檔案，也不會讀取其他程式的內容。它在螢幕上能看到的，只有截圖裡顯示的畫面。</p>
+<h2>哪些資料會傳給 Google Gemini</h2>
+<p>每次發問，程式會透過加密的 HTTPS 連線，把請求送到 Google 的 Gemini API（<code>generativelanguage.googleapis.com</code>）。API 金鑰放在請求標頭裡傳送，不會出現在網址上。</p>
+<ul>
+<li><strong>聽懂並回答你的問題：</strong>送出你的錄音（16 kHz 單聲道）、螢幕截圖和截圖的像素大小，以及最近最多 10 輪問答的文字（只有文字，每則最多 300 字，總共最多 2,000 字）。預設由 Gemini 在同一次請求裡把你說的話轉成文字並回答。如果開啟選用設定 <code>"stt": "gemini-transcribe"</code>，會另外送一次只有錄音的請求，專門轉成文字。</li>
+<li><strong>把回答念出來：</strong>送出回答的文字、選用的聲音名稱和一段簡短的說話風格說明，Gemini 會回傳語音。如果設定 <code>"speak": false</code>，就只顯示文字回答，不會送出這個請求。</li>
+</ul>
+<p>以前的截圖和錄音不會再送一次；只有之前問答的文字會當作對話脈絡送出。</p>
+<h2>Google 怎麼處理這些資料</h2>
+<p>Google 依照它自己的條款處理這些請求。這些條款適用於你的 API 金鑰和你的 Google 帳戶，而不是 FusionCore。Google 怎麼使用這些資料，要看你的金鑰所屬的 Google 專案怎麼設定：</p>
+<ul>
+<li><strong>免費（未付費）額度：</strong>依照 Google 的《Gemini API 附加服務條款》，Google 會用你送出的內容和產生的回應來提供、改善及開發它的產品，也可能由人工審查人員閱讀。Google 提醒在免費額度下不要送出敏感、機密或個人資料。</li>
+<li><strong>付費額度（已開啟計費）：</strong>同一份條款說明，Google 不會用你的提示和回應來改善產品，只會為了偵測濫用和法律要求保留一段有限的時間。</li>
+</ul>
+<p>詳細內容請看 Google 自己的說明：</p>
+<ul>
+<li>Gemini API 附加服務條款：<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a></li>
+<li>Google 隱私權政策：<a href="https://policies.google.com/privacy?hl=zh-TW" rel="noopener">https://policies.google.com/privacy?hl=zh-TW</a></li>
+</ul>
+<h2>哪些資料存在你的電腦上</h2>
+<p>程式把下列檔案存在你的使用者資料夾 <code>%APPDATA%\screen-helper</code> 裡。從工作列圖示選單點「開啟設定檔 config.json」或「開啟記錄資料夾（logs）」就能找到。</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config.json</code></td>
+<td>你的設定。如果把 Gemini API 金鑰貼在這裡，金鑰會以<strong>純文字</strong>儲存。你也可以改用 <code>GEMINI_API_KEY</code> 環境變數；有設定的話，程式會優先使用它。</td>
+</tr>
+<tr>
+<td><code>logs\turns-YYYY-MM-DD.jsonl</code></td>
+<td>每個問題一行：時間、Gemini 聽到你說的內容、回答、游標指到的位置、使用的模型和聲音、各階段花的時間，以及錯誤訊息。</td>
+</tr>
+<tr>
+<td><code>logs\artifacts\</code></td>
+<td><strong>預設關閉</strong>（<code>"save_artifacts": false</code>）：不會存任何錄音或截圖。如果你在 <code>config.json</code> 裡把它改成 <code>"save_artifacts": true</code>，之後每個有得到回答的問題，都會在 <code>%APPDATA%\screen-helper\logs\artifacts\</code> 存下完整錄音（<code>.wav</code>）和截圖（<code>.jpg</code>，上面用紅圈標出游標指的位置）。改回 <code>false</code> 就不會再存；已經存的檔案要自己刪除。注意：舊版測試程式寫出的 <code>config.json</code> 裡是 <code>true</code>，那樣的話會繼續存，直到你改掉為止。</td>
+</tr>
+<tr>
+<td><code>quota.json</code></td>
+<td>每個 Gemini 模型今天用了幾次，讓程式能跳過已經用完額度的模型。裡面沒有任何問題或回答。</td>
+</tr>
+</tbody>
+</table></div>
+<p>程式不會把你的 API 金鑰寫進記錄檔。</p>
+<p><strong>只放在記憶體裡的資料：</strong>對話脈絡（最近的問題和回答），以及上一個回答的語音（給「再念一次上一個回答」使用）。關閉程式後就會消失。</p>
+<h2>資料保留多久</h2>
+<ul>
+<li><strong>你的電腦上：</strong>保留到你自己刪除為止。程式不會自動刪除舊的記錄、錄音或截圖。</li>
+<li><strong>FusionCore：</strong>不保留任何資料，因為我們什麼都沒收到。</li>
+<li><strong>Google：</strong>請參考上面 Google 的條款。</li>
+</ul>
+<h2>Windows 系統語音</h2>
+<p>如果 Gemini 語音失敗，或是程式在本機的計數顯示今天的 Gemini 語音額度已經用完，程式可以改用 Windows 內建的語音念出回答。這個語音是由 Windows 在你的電腦上產生的，程式不會為此另外傳送任何資料。如果不想使用，可以設定 <code>"system_voice_fallback": false</code>。</p>
+<h2>你可以怎麼做</h2>
+<ul>
+<li><strong>不想錄音或傳送任何資料：</strong>不要按快捷鍵，或從工作列圖示選單點「結束 Quit」關閉程式。</li>
+<li><strong>要不要存錄音和截圖：</strong>預設不存。想存的話，在 <code>config.json</code> 裡設定 <code>"save_artifacts": true</code>；不想存就設定成 <code>false</code>（或把這一行刪掉）。改完存檔，再重新開啟程式。檔案存在 <code>%APPDATA%\screen-helper\logs\artifacts\</code>，可以隨時刪除。</li>
+<li><strong>刪除電腦上的資料：</strong>刪除 <code>logs</code> 資料夾、<code>quota.json</code> 和 <code>config.json</code>（可以用上面的選單項目找到，或用檔案總管）。</li>
+<li><strong>停止使用你的金鑰：</strong>把金鑰從 <code>config.json</code> 刪掉，或到 Google AI Studio 撤銷這把金鑰。</li>
+<li><strong>解除安裝：</strong>到 Windows「設定」解除安裝螢幕小幫手。從 Microsoft Store 安裝的版本，Windows 通常會把程式的檔案放在專屬的位置，解除安裝時一併刪除。如果之後 <code>screen-helper</code> 資料夾還在，可以自己手動刪除。</li>
+</ul>
+<h2>兒童</h2>
+<p>螢幕小幫手不是為兒童設計的。Google 的 Gemini API 條款規定使用者必須年滿 18 歲，而使用本程式需要你自己的 Gemini API 金鑰。</p>
+<h2>政策變更</h2>
+<p>如果程式處理資料的方式有所改變，我們會更新這個頁面和生效日期。</p>
+<h2>聯絡我們</h2>
+<p>FusionCore：bump.into.support@gmail.com</p>
+<p class="top"><a href="#en" hreflang="en">English version ↓</a></p>
+</section>
+<section id="en" lang="en">
+<h1>Screen Helper Privacy Policy</h1>
+<p><strong>App:</strong> Screen Helper (螢幕小幫手)<br />
+<strong>Publisher:</strong> FusionCore<br />
+<strong>Effective date:</strong> 17 November 2026<br />
+<strong>Contact:</strong> bump.into.support@gmail.com</p>
+<h2>In short</h2>
+<ul>
+<li>Screen Helper uses your microphone and takes a screenshot <strong>only when you press its hotkey</strong> to ask a question.</li>
+<li>Your recording, your screenshot and recent conversation text go <strong>straight from your computer to Google's Gemini API</strong>, using <strong>your own Gemini API key</strong>. They do not pass through FusionCore.</li>
+<li><strong>FusionCore receives none of your data.</strong> The app has no account, no analytics, no ads, no crash reporting and no update checks. We don't sell data, and the app doesn't collect your contacts, location or payment details.</li>
+<li>The app keeps settings and logs on your computer. Your recordings and screenshots are <strong>not saved</strong> unless you turn saving on. You can turn it off again and delete the files at any time.</li>
+</ul>
+<h2>When the app uses your microphone and screen</h2>
+<p><strong>Microphone.</strong> The app opens the microphone only after you press the hotkey (Ctrl+Alt+Space by default). In the default "hold" mode it records while you hold the key and stops when you let go. In "toggle" mode you press once to start and again to send. A recording stops by itself after 60 seconds at most. Recordings shorter than 0.4 seconds are thrown away and not sent.</p>
+<p><strong>Screenshot.</strong> When you send a question, the app takes one screenshot of the monitor your mouse is on. If you change the <code>capture</code> setting to <code>"all"</code>, it captures every monitor. Screenshots are scaled down (by default to at most 1280 pixels on the long side) and converted to JPEG images before they are sent. The app's own pointer and caption are kept out of the screenshot.</p>
+<p><strong>Mouse position.</strong> The app reads where your mouse is so it can pick the right monitor and so its pointer can follow the mouse on screen. Your mouse coordinates are not sent to Google.</p>
+<p><strong>Other data.</strong> The app does not read window titles, the clipboard, files on your computer, or anything else from other apps. The only things it sees on your screen are what is visible in the screenshot.</p>
+<h2>What is sent to Google Gemini</h2>
+<p>Each question sends requests to Google's Gemini API (<code>generativelanguage.googleapis.com</code>) over an encrypted HTTPS connection. Your API key is sent in a request header, never in the web address.</p>
+<ul>
+<li><strong>To understand and answer your question:</strong> your recording (16 kHz mono audio), the screenshot(s) and their pixel size, and the text of up to your last 10 questions and answers (text only, cut to 300 characters each and 2,000 characters in total). By default Gemini writes down what you said and answers in the same request. An optional setting (<code>"stt": "gemini-transcribe"</code>) sends the recording in a separate request just to write down what you said.</li>
+<li><strong>To speak the answer:</strong> the answer text, the chosen voice name and a short speaking-style note. Gemini sends back audio. If you set <code>"speak": false</code>, the app shows the answer as text only and doesn't make this request.</li>
+</ul>
+<p>Older screenshots and recordings are never sent again. Only the text of earlier questions and answers is sent, as conversation context.</p>
+<h2>How Google handles that data</h2>
+<p>Google processes these requests under its own terms, which apply to your API key and your Google account, not to FusionCore. What Google does with them depends on how the Google project behind your key is set up:</p>
+<ul>
+<li><strong>Free (unpaid) quota:</strong> Google's Gemini API Additional Terms say Google uses the content you submit and the responses to provide, improve and develop its products, and that human reviewers may read it. Google asks you not to submit sensitive, confidential or personal information on unpaid quota.</li>
+<li><strong>Paid quota (billing turned on):</strong> the same terms say Google does not use your prompts or responses to improve its products. It keeps them for a limited time to detect abuse and for legal reasons.</li>
+</ul>
+<p>Read Google's own pages for the details:</p>
+<ul>
+<li>Gemini API Additional Terms of Service: <a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a></li>
+<li>Google Privacy Policy: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+</ul>
+<h2>What is stored on your computer</h2>
+<p>The app stores these files in your user profile, in the <code>%APPDATA%\screen-helper</code> folder. The tray menu items "開啟設定檔 config.json" and "開啟記錄資料夾（logs）" open the right place.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>What's in it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config.json</code></td>
+<td>Your settings. If you paste your Gemini API key here, it is stored <strong>in plain text</strong>. You can use the <code>GEMINI_API_KEY</code> environment variable instead; if it is set, the app uses it first.</td>
+</tr>
+<tr>
+<td><code>logs\turns-YYYY-MM-DD.jsonl</code></td>
+<td>One line per question: the time, what Gemini heard you say, the answer, where the pointer went, the models and voice used, timings and any error message.</td>
+</tr>
+<tr>
+<td><code>logs\artifacts\</code></td>
+<td><strong>Off by default</strong> (<code>"save_artifacts": false</code>): no recordings or screenshots are saved. If you set <code>"save_artifacts": true</code> in <code>config.json</code>, then for each answered question the app saves your full recording (<code>.wav</code>) and the screenshot (<code>.jpg</code>, with red circles where the pointer went) in <code>%APPDATA%\screen-helper\logs\artifacts\</code>. Set it back to <code>false</code> to stop; files already saved stay until you delete them. Note: a <code>config.json</code> written by an earlier test build says <code>true</code>, so saving stays on there until you change it.</td>
+</tr>
+<tr>
+<td><code>quota.json</code></td>
+<td>How many requests each Gemini model has used today, so the app can skip models that are used up. It contains no questions or answers.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The app never writes your API key to the logs.</p>
+<p><strong>Kept in memory only:</strong> the conversation context (your recent questions and answers) and the audio of the last spoken answer (for the "say it again" menu item). Both are gone when you quit the app.</p>
+<h2>How long data is kept</h2>
+<ul>
+<li><strong>On your computer:</strong> until you delete it. The app doesn't delete old logs or saved recordings and screenshots by itself.</li>
+<li><strong>At FusionCore:</strong> nothing is kept, because nothing is sent to us.</li>
+<li><strong>At Google:</strong> see Google's terms above.</li>
+</ul>
+<h2>Windows system voice</h2>
+<p>If the Gemini voice fails, or the app's local count says today's Gemini voice quota is used up, the app can read the answer aloud with a voice installed in Windows. Windows makes this speech on your computer, and the app doesn't send anything extra for it. To turn it off, set <code>"system_voice_fallback": false</code>.</p>
+<h2>Your choices</h2>
+<ul>
+<li><strong>Don't want anything recorded or sent?</strong> Don't press the hotkey, or quit the app from the tray menu ("結束 Quit").</li>
+<li><strong>Save recordings and screenshots, or not:</strong> they are not saved by default. To save them, set <code>"save_artifacts": true</code> in <code>config.json</code>; to stop, set it to <code>false</code> (or delete the line). Save the file and restart the app. The files go to <code>%APPDATA%\screen-helper\logs\artifacts\</code>, and you can delete them at any time.</li>
+<li><strong>Delete local data:</strong> delete the <code>logs</code> folder, <code>quota.json</code> and <code>config.json</code> (with the tray menu items above, or in File Explorer).</li>
+<li><strong>Stop all use of your key:</strong> remove the key from <code>config.json</code>, or revoke it in Google AI Studio.</li>
+<li><strong>Uninstall:</strong> uninstall Screen Helper from Windows Settings. For the Microsoft Store version, Windows normally keeps the app's files in a private per-app location and removes them on uninstall. If a <code>screen-helper</code> folder is still there afterwards, you can delete it yourself.</li>
+</ul>
+<h2>Children</h2>
+<p>Screen Helper is not meant for children. Google's Gemini API terms require users to be 18 or older, and you need your own Gemini API key to use the app.</p>
+<h2>Changes to this policy</h2>
+<p>If the app starts handling data differently, we will update this page and its effective date.</p>
+<h2>Contact</h2>
+<p>FusionCore — bump.into.support@gmail.com</p>
+<p class="top"><a href="#zh-TW" hreflang="zh-Hant-TW">回到繁體中文 ↑</a></p>
+</section>
+</main>
+</body>
+</html>
